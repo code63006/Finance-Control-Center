@@ -73,14 +73,7 @@ pytest -q
 
 Tests include end-to-end guards from anomaly injection through ingest, matching, evidence, and diagnosis for every supported root cause.
 
-## 90-second demo
 
-1. Start the project and open the Finance Control Center.
-2. State the close status: which cases can be diagnosed, which require review, and the total cash exposure.
-3. Open the exception queue; it is ordered by financial exposure.
-4. Inspect a case to compare expected settlement with bank receipt, see the source timeline, evidence, and recommended action.
-5. Ask: `Why is ORD_... blocked?` The copilot answers from the reconciled case state, shows its evidence, and states the next human action.
-6. Close with the holdout accuracy, macro-F1, and abstention rate—emphasizing that uncertainty is routed to review rather than guessed.
 
 ## What this does not yet solve
 
