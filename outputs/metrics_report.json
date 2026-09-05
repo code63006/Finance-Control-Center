@@ -1,133 +1,147 @@
 {
   "throughput": {
-    "total_cases": 60,
-    "source_records": 626,
-    "cases_per_sec": 2377.93,
-    "wall_time_seconds": 0.025
+    "total_cases": 120,
+    "source_records": 1241,
+    "cases_per_sec": 3618.17,
+    "wall_time_seconds": 0.033
   },
   "match_resolution": {
-    "linked_cases": 60,
+    "linked_cases": 120,
     "unlinked_cases": 0,
     "case_linkage_rate": 100.0,
-    "cases_with_node_exceptions": 47,
-    "case_exception_rate": 78.3,
-    "exact_node_matches": 383,
-    "fuzzy_node_matches": 45,
+    "cases_with_node_exceptions": 102,
+    "case_exception_rate": 85.0,
+    "exact_node_matches": 764,
+    "fuzzy_node_matches": 88,
     "ambiguous_nodes": 1,
-    "unmatched_nodes": 73,
+    "unmatched_nodes": 147,
     "note": "Case linkage identifies records grouped to an order. Node exceptions remain visible and are never counted as a clean reconciliation."
   },
   "ledger_verification": {
-    "balanced_count": 33,
-    "total_with_ledger": 61,
-    "cases_checked": 60,
-    "posting_case_count": 61,
-    "balance_pass_rate": 54.1,
+    "balanced_count": 57,
+    "total_with_ledger": 121,
+    "cases_checked": 120,
+    "posting_case_count": 121,
+    "balance_pass_rate": 47.1,
     "account_code_pass_rate": 100.0,
-    "clean_case_count": 14,
-    "clean_case_balanced_count": 11,
-    "clean_case_balance_rate": 78.6,
-    "flagged_imbalance_count": 28,
-    "unflagged_ledger_imbalance_count": 1,
+    "clean_case_count": 19,
+    "clean_case_balanced_count": 13,
+    "clean_case_balance_rate": 68.4,
+    "flagged_imbalance_count": 64,
+    "unflagged_ledger_imbalance_count": 0,
     "note": "Detected anomaly cases may remain unbalanced until a finance reviewer resolves them; clean cases are reported separately."
   },
   "confusion_matrix": {
     "AMOUNT_DRIFT": {
       "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0,
-      "support": 5
+      "recall": 0.833,
+      "f1": 0.909,
+      "support": 12
     },
     "DUPLICATE_PAYMENT": {
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0,
-      "support": 5
+      "support": 10
     },
     "FEE_MISSING": {
       "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0,
-      "support": 5
+      "recall": 0.917,
+      "f1": 0.957,
+      "support": 12
     },
     "LATE_SETTLEMENT": {
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0,
-      "support": 4
+      "support": 10
     },
     "NO_ISSUE": {
-      "precision": 0.95,
+      "precision": 0.962,
       "recall": 1.0,
-      "f1": 0.974,
-      "support": 19
+      "f1": 0.98,
+      "support": 25
     },
     "ORPHANED_REFUND": {
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0,
-      "support": 4
+      "support": 10
     },
     "PROVENANCE_SKEW": {
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0,
-      "support": 5
+      "support": 10
     },
     "SOURCE_CONFLICT": {
-      "precision": 1.0,
+      "precision": 0.833,
       "recall": 1.0,
-      "f1": 1.0,
-      "support": 4
+      "f1": 0.909,
+      "support": 10
     },
     "SPLIT_MISATTRIBUTION": {
       "precision": 1.0,
-      "recall": 0.75,
-      "f1": 0.857,
-      "support": 4
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 10
     },
     "TAX_RATE_ERROR": {
       "precision": 1.0,
       "recall": 1.0,
       "f1": 1.0,
-      "support": 5
+      "support": 11
     }
   },
   "diagnosis_quality": {
-    "top_1_accuracy": 98.3,
-    "correct_predictions": 59,
-    "evaluated_cases": 60,
-    "macro_f1": 98.3,
-    "confident_or_plausible": 35,
-    "abstained_or_escalated": 25,
-    "abstention_rate": 41.7,
+    "top_1_accuracy": 97.5,
+    "correct_predictions": 117,
+    "evaluated_cases": 120,
+    "macro_f1": 97.5,
+    "confident_or_plausible": 82,
+    "abstained_or_escalated": 38,
+    "abstention_rate": 31.7,
     "miss_analysis": [
       {
-        "case_id": "ORD_000053_6dda4f8d",
-        "expected": "SPLIT_MISATTRIBUTION",
+        "case_id": "ORD_000101_34ecdfdc",
+        "expected": "AMOUNT_DRIFT",
+        "predicted": "SOURCE_CONFLICT",
+        "outcome": "STRONGLY_SUPPORTED",
+        "evidence_gap": "Competing evidence requires rule refinement"
+      },
+      {
+        "case_id": "ORD_000554_8c5914e5",
+        "expected": "FEE_MISSING",
         "predicted": "NO_ISSUE",
         "outcome": "INSUFFICIENT_EVIDENCE",
         "evidence_gap": "Abstained pending more source evidence"
+      },
+      {
+        "case_id": "ORD_000100_84542a6d",
+        "expected": "AMOUNT_DRIFT",
+        "predicted": "SOURCE_CONFLICT",
+        "outcome": "STRONGLY_SUPPORTED",
+        "evidence_gap": "Competing evidence requires rule refinement"
       }
     ]
   },
   "outcome_counts": {
-    "INSUFFICIENT_EVIDENCE": 20,
-    "STRONGLY_SUPPORTED": 26,
-    "UNRESOLVED_AMBIGUITY": 5,
-    "PLAUSIBLE_UNCONFIRMED": 9
+    "INSUFFICIENT_EVIDENCE": 26,
+    "STRONGLY_SUPPORTED": 62,
+    "UNRESOLVED_AMBIGUITY": 12,
+    "PLAUSIBLE_UNCONFIRMED": 20
   },
   "financial_exposure": {
-    "net_variance_paise": -83020973,
-    "total_absolute_exposure_paise": 83020985,
-    "mean_exposure_paise": 1383683
+    "net_variance_paise": -45943,
+    "total_absolute_exposure_paise": 45969,
+    "mean_exposure_paise": 383
   },
   "cash_position": {
-    "payments_captured_paise": 102030864,
-    "settlements_expected_paise": 97398282,
-    "bank_received_paise": 14404286,
-    "refunds_paise": 2657057,
-    "pending_settlement_paise": 82993996
+    "payments_captured_paise": 32969585,
+    "settlements_expected_paise": 27110254,
+    "bank_received_paise": 27135171,
+    "refunds_paise": 6018283,
+    "pending_settlement_paise": -24917
   },
   "ablation": {
     "ai_enabled": true,

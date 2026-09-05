@@ -19,6 +19,8 @@ flowchart LR
 
 The deterministic reconciliation and financial calculations remain authoritative. The copilot explains evidence and recommends a next investigation step; it never posts a journal, approves a settlement, or creates a financial action.
 
+
+
 ## Benchmark results
 
 The bundled benchmark contains a 60-case development batch and a separately generated 120-case holdout batch. Each anomaly class has at least ten holdout examples; every miss is retained with its predicted cause, outcome, and evidence gap in `outputs/holdout/metrics_report.json`.
@@ -26,15 +28,32 @@ The bundled benchmark contains a 60-case development batch and a separately gene
 | Measure | Development | Holdout |
 |---|---:|---:|
 | Cases / source records | 60 / 626 | 120 / 1,241 |
-| Top-1 root-cause accuracy | Reproduced by evaluator | Reproduced by evaluator |
-| Macro-F1 | Reproduced by evaluator | Reproduced by evaluator |
-| Per-class holdout support | — | At least 10 per anomaly class |
-| Abstention rate | Reproduced by evaluator | Reproduced by evaluator |
-| Case linkage | Reproduced by evaluator | Reproduced by evaluator |
+| Top-1 root-cause accuracy | 98.3% (59/60) | 97.5% (117/120) |
+| Macro-F1 | 98.3% | 97.5% |
+| Correct abstentions | 25 | 38 |
+| False confident answers | 0 | 2 |
+| Abstention rate | 41.7% | 31.7% |
+| Case linkage | 100% | 100% |
+
+### Holdout miss analysis
+
+The 120-case holdout produced 3 diagnosis misses:
+
+- 2 `AMOUNT_DRIFT` cases were confidently classified as `SOURCE_CONFLICT`; these require rule refinement for competing evidence.
+- 1 `FEE_MISSING` case correctly abstained due to insufficient evidence, but did not recover the correct root cause.
+
+Overall holdout accuracy was 97.5% (117/120), with all cases successfully linked to a lifecycle case.
 
 “Case linkage” means records were assigned to a lifecycle case. It is deliberately distinct from a clean reconciliation: node-level ambiguity and unmatched records remain visible and feed the exception queue. Accuracy is calculated as correct top-1 diagnosis divided by all evaluated cases; macro-F1 weights each anomaly class equally.
 
+
 ## Supported root causes
+## Glossary
+
+- **RCH (Root-Cause Hypothesis):** A candidate explanation for why expected and actual financial states diverge.
+- **FOD (First Observed Divergence):** The earliest lifecycle point where expected and actual state disagree.
+- **OC (Observed Cause):** The ground-truth anomaly type injected into a test case.
+- **CH (Cause Hypothesis):** The candidate root-cause class used to evaluate diagnosis.
 
 - Missing fee record
 - Duplicate payment webhook

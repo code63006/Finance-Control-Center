@@ -474,7 +474,8 @@ def evaluate_batch(
     unflagged_imbalances = sum(
         1
         for oid, ledger in ledger_verif.items()
-        if not ledger.is_balanced
+        if oid in case_results
+        and not ledger.is_balanced
         and case_results.get(oid, {}).get("diagnosis", {}).get("outcome") not in {
             Outcome.STRONGLY_SUPPORTED.value,
             Outcome.PLAUSIBLE_UNCONFIRMED.value,

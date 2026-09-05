@@ -2,8 +2,8 @@
   "throughput": {
     "total_cases": 120,
     "source_records": 1241,
-    "cases_per_sec": 2170.89,
-    "wall_time_seconds": 0.055
+    "cases_per_sec": 2290.36,
+    "wall_time_seconds": 0.052
   },
   "match_resolution": {
     "linked_cases": 120,
@@ -28,7 +28,7 @@
     "clean_case_balanced_count": 13,
     "clean_case_balance_rate": 68.4,
     "flagged_imbalance_count": 64,
-    "unflagged_ledger_imbalance_count": 1,
+    "unflagged_ledger_imbalance_count": 0,
     "note": "Detected anomaly cases may remain unbalanced until a finance reviewer resolves them; clean cases are reported separately."
   },
   "confusion_matrix": {
