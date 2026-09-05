@@ -1,0 +1,9 @@
+services:
+  finance-controller:
+    build: .
+    ports:
+      - "${PORT:-8000}:8000"
+    environment:
+      - DATA_BATCH=${DATA_BATCH:-dev}
+      - SEED=${SEED:-42}
+      - PORT=${PORT:-8000}

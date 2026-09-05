@@ -1,0 +1,200 @@
+{
+  "order_id": "ORD_000900_40ae8944",
+  "payment_method": "netbanking",
+  "amount_paise": 170387,
+  "created_at": "2024-09-04T18:00:00+00:00",
+  "nodes": {
+    "order": {
+      "node_type": "order",
+      "source": "orders_db",
+      "amount_paise": 170387,
+      "timestamp": "2024-09-04T18:00:00+00:00",
+      "occurred_at": "2024-09-04T18:00:00+00:00",
+      "received_at": "2024-09-04T18:00:30+00:00",
+      "processed_at": "2024-09-04T18:01:30+00:00",
+      "reference_id": "ORD_ac2c05170e00",
+      "order_id": "ORD_000900_40ae8944",
+      "content_hash": "5d299056de62c605",
+      "metadata": {
+        "payment_method": "netbanking",
+        "currency": "INR"
+      }
+    },
+    "payment": {
+      "node_type": "payment",
+      "source": "razorpay_recon",
+      "amount_paise": 170387,
+      "timestamp": "2024-09-04T18:40:34+00:00",
+      "occurred_at": "2024-09-04T18:40:34+00:00",
+      "received_at": "2024-09-04T18:41:04+00:00",
+      "processed_at": "2024-09-04T18:42:04+00:00",
+      "reference_id": "PAY_cf8589990fb0",
+      "order_id": "ORD_000900_40ae8944",
+      "content_hash": "b3ff490ae03b7cb6",
+      "metadata": {
+        "payment_method": "netbanking",
+        "status": "captured"
+      }
+    },
+    "fee": {
+      "node_type": "fee",
+      "source": "razorpay_recon",
+      "amount_paise": 2555,
+      "timestamp": "2024-09-04T18:40:36+00:00",
+      "occurred_at": "2024-09-04T18:40:36+00:00",
+      "received_at": "2024-09-04T18:41:06+00:00",
+      "processed_at": "2024-09-04T18:42:06+00:00",
+      "reference_id": "FEE_9424aa54bbc7",
+      "order_id": "ORD_000900_40ae8944",
+      "content_hash": "3e0f074c54f6d472",
+      "metadata": {
+        "payment_method": "netbanking"
+      }
+    },
+    "tax": {
+      "node_type": "tax",
+      "source": "tax_invoice",
+      "amount_paise": 307,
+      "timestamp": "2024-09-04T18:40:43+00:00",
+      "occurred_at": "2024-09-04T18:40:43+00:00",
+      "received_at": "2024-09-04T18:41:13+00:00",
+      "processed_at": "2024-09-04T18:42:13+00:00",
+      "reference_id": "TAX_d0c4fa64204d",
+      "order_id": "ORD_000900_40ae8944",
+      "content_hash": "224d5c19315328f2",
+      "metadata": {
+        "tax_type": "GST",
+        "rate": 0.18
+      }
+    },
+    "refunds": [],
+    "settlement": {
+      "node_type": "settlement",
+      "source": "razorpay_recon",
+      "amount_paise": 167373,
+      "timestamp": "2024-09-06T18:40:34+00:00",
+      "occurred_at": "2024-09-06T18:40:34+00:00",
+      "received_at": "2024-09-06T18:41:04+00:00",
+      "processed_at": "2024-09-06T18:42:04+00:00",
+      "reference_id": "STL_b7806b18432d",
+      "order_id": "ORD_000900_40ae8944",
+      "content_hash": "17b9ae7fa248a4ce",
+      "metadata": {
+        "net_settlement": true
+      }
+    },
+    "bank_entries": [
+      {
+        "node_type": "bank",
+        "source": "bank_statement",
+        "amount_paise": 56818,
+        "timestamp": "2024-09-07T04:40:34+00:00",
+        "occurred_at": "2024-09-07T04:40:34+00:00",
+        "received_at": "2024-09-07T04:41:04+00:00",
+        "processed_at": "2024-09-07T04:42:04+00:00",
+        "reference_id": "BNK_c20987943ac1",
+        "order_id": "ORD_000900_40ae8944",
+        "content_hash": "88cbdf1a305be820",
+        "metadata": {
+          "split_index": 0,
+          "n_splits": 2
+        }
+      },
+      {
+        "node_type": "bank",
+        "source": "bank_statement",
+        "amount_paise": 110555,
+        "timestamp": "2024-09-07T14:40:34+00:00",
+        "occurred_at": "2024-09-07T14:40:34+00:00",
+        "received_at": "2024-09-07T14:41:04+00:00",
+        "processed_at": "2024-09-07T14:42:04+00:00",
+        "reference_id": "BNK_588250613e29",
+        "order_id": "ORD_000900_40ae8944",
+        "content_hash": "8e46addefe0a6acc",
+        "metadata": {
+          "split_index": 1,
+          "n_splits": 2
+        }
+      }
+    ],
+    "ledger_postings": [
+      {
+        "node_type": "ledger",
+        "source": "razorpay_recon",
+        "amount_paise": 170387,
+        "timestamp": "2024-09-04T18:41:31+00:00",
+        "occurred_at": "2024-09-04T18:41:31+00:00",
+        "received_at": "2024-09-04T18:42:01+00:00",
+        "processed_at": "2024-09-04T18:43:01+00:00",
+        "reference_id": "LED_bf84187f2572",
+        "order_id": "ORD_000900_40ae8944",
+        "content_hash": "41bd6702aa9240af",
+        "metadata": {
+          "account_code": "PAYMENT_RECEIVABLE",
+          "debit": true
+        }
+      },
+      {
+        "node_type": "ledger",
+        "source": "razorpay_recon",
+        "amount_paise": 2555,
+        "timestamp": "2024-09-04T18:41:16+00:00",
+        "occurred_at": "2024-09-04T18:41:16+00:00",
+        "received_at": "2024-09-04T18:41:46+00:00",
+        "processed_at": "2024-09-04T18:42:46+00:00",
+        "reference_id": "LED_6d0ca8428767",
+        "order_id": "ORD_000900_40ae8944",
+        "content_hash": "6a33d71754b565ce",
+        "metadata": {
+          "account_code": "FEE_INCOME",
+          "debit": false
+        }
+      },
+      {
+        "node_type": "ledger",
+        "source": "tax_invoice",
+        "amount_paise": 459,
+        "timestamp": "2024-09-04T18:40:45+00:00",
+        "occurred_at": "2024-09-04T18:40:45+00:00",
+        "received_at": "2024-09-04T18:41:15+00:00",
+        "processed_at": "2024-09-04T18:42:15+00:00",
+        "reference_id": "LED_6e01c705b462",
+        "order_id": "ORD_000900_40ae8944",
+        "content_hash": "e328cc367f27911b",
+        "metadata": {
+          "account_code": "GST_OUTPUT",
+          "debit": false
+        }
+      },
+      {
+        "node_type": "ledger",
+        "source": "razorpay_recon",
+        "amount_paise": 167373,
+        "timestamp": "2024-09-06T18:40:56+00:00",
+        "occurred_at": "2024-09-06T18:40:56+00:00",
+        "received_at": "2024-09-06T18:41:26+00:00",
+        "processed_at": "2024-09-06T18:42:26+00:00",
+        "reference_id": "LED_5141fff8c521",
+        "order_id": "ORD_000900_40ae8944",
+        "content_hash": "f431408a1da92c16",
+        "metadata": {
+          "account_code": "MERCHANT_PAYOUT",
+          "debit": true
+        }
+      }
+    ]
+  },
+  "ground_truth": {
+    "is_clean": false,
+    "injected_oc": "wrong_tax_rate",
+    "affected_node": "tax",
+    "expected_ch": "TAX_RATE_ERROR",
+    "counterfactual_correct_values": {
+      "correct_tax_paise": 459,
+      "reported_tax_paise": 307
+    },
+    "expected_terminal_outcome": "PLAUSIBLE_UNCONFIRMED"
+  },
+  "is_clean": false,
+  "demo_label": "Wrong GST rate: expected 18%, reported 12%"
+}
